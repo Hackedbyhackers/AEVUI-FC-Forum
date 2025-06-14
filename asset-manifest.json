@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AEVUI-FC-Forum/static/css/main.0fa24c86.css",
+    "main.js": "/AEVUI-FC-Forum/static/js/main.01bb2206.js",
+    "index.html": "/AEVUI-FC-Forum/index.html",
+    "main.0fa24c86.css.map": "/AEVUI-FC-Forum/static/css/main.0fa24c86.css.map",
+    "main.01bb2206.js.map": "/AEVUI-FC-Forum/static/js/main.01bb2206.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fa24c86.css",
+    "static/js/main.01bb2206.js"
+  ]
+}
