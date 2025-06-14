@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌈 RGB Flow Background */
+@keyframes rgbFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  background: linear-gradient(270deg, #ff4ecd, #00f0ff, #3eff5b, #ffe600, #ff4ecd);
+  background-size: 1500% 1500%;
+  animation: rgbFlow 20s ease infinite;
+}
+
+/* 🎯 Theme-Specific Text Colors */
+.neon {
+  @apply text-green-400;
+}
+
+.vivid {
+  @apply text-pink-600;
+}
+
+.life {
+  @apply text-green-700;
+}
+
+.dark {
+  @apply text-gray-100;
+}
+
+/* 🧵 Transitions */
+html,
+body,
+#root {
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* ⚡ Enhanced Glowing RGB Button */
+.glow-button {
+  @apply relative px-6 py-3 rounded-lg text-white font-bold z-10;
+  background: linear-gradient(45deg, #ff0055, #00ffff, #ff0055, #00ffff);
+  background-size: 400% 400%;
+  border: none;
+  cursor: pointer;
+  animation: glowMove 8s ease infinite;
+  box-shadow:
+    0 0 8px rgba(255, 0, 85, 0.7),
+    0 0 20px rgba(0, 255, 255, 0.7);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.glow-button:hover {
+  box-shadow:
+    0 0 15px rgba(255, 0, 85, 1),
+    0 0 30px rgba(0, 255, 255, 1),
+    0 0 40px rgba(255, 0, 85, 1);
+  transform: scale(1.05);
+}
+
+@keyframes glowMove {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 💫 Avatar Glow */
+@keyframes glowPulse {
+  0% {
+    filter: brightness(1.2);
+  }
+  50% {
+    filter: brightness(2);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+.animate-glow {
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+/* 🧩 Tab Glow (apply with active tab) */
+.tab-active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-[3px];
+  background: linear-gradient(to right, #ff00ff, #00ffff, #00ff95);
+  animation: glowMove 4s linear infinite;
+  border-radius: 2px;
+}

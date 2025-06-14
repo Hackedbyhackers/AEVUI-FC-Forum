@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AEVUI FC 🏆</title>
+
+    <!-- ✅ Custom Favicon -->
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon2.png" />
+
+    <!-- ✅ Tailwind output -->
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <style>
+      /* Insert the glowing RGB button CSS here or ensure it is in /dist/output.css */
+
+      /* ⚡ Enhanced Glowing RGB Button */
+      .glow-button {
+        position: relative;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(45deg, #ff0055, #00ffff, #ff0055, #00ffff);
+        background-size: 400% 400%;
+        border: none;
+        cursor: pointer;
+        animation: glowMove 8s ease infinite;
+        box-shadow:
+          0 0 8px rgba(255, 0, 85, 0.7),
+          0 0 20px rgba(0, 255, 255, 0.7);
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+        user-select: none;
+      }
+
+      .glow-button:hover {
+        box-shadow:
+          0 0 15px rgba(255, 0, 85, 1),
+          0 0 30px rgba(0, 255, 255, 1),
+          0 0 40px rgba(255, 0, 85, 1);
+        transform: scale(1.05);
+      }
+
+      @keyframes glowMove {
+        0% {
+          background-position: 0% 50%;
+          box-shadow:
+            0 0 8px rgba(255, 0, 85, 0.7),
+            0 0 20px rgba(0, 255, 255, 0.7);
+        }
+        50% {
+          background-position: 100% 50%;
+          box-shadow:
+            0 0 20px rgba(255, 0, 85, 1),
+            0 0 40px rgba(0, 255, 255, 1);
+        }
+        100% {
+          background-position: 0% 50%;
+          box-shadow:
+            0 0 8px rgba(255, 0, 85, 0.7),
+            0 0 20px rgba(0, 255, 255, 0.7);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Demo glowing button -->
+      <button class="glow-button" type="button">Join the Club</button>
+    </div>
+
+    <!-- ✅ JS entry (usually handled by React toolchain like CRA or Vite) -->
+    <script src="../src/index.js" type="module"></script>
+  </body>
+</html>
